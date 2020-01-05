@@ -30,4 +30,4 @@ for i in range(len(c)):
 for i in range(len(a)):
     if a[i]==1:
         d.append(i)
-#最后输出的是d
+#最后输出的是d。
