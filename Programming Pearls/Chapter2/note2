@@ -67,3 +67,28 @@ def move_word(word,strt,step):
         word[strt+len(left):strt+len(left)+step] = tmp
         return word
 ~~~
+4.1
+~~~
+def move_reverse(word,step):
+    def reverse(word):
+        start = 0
+        end = len(word)-1
+        while(start<end):
+            tmp = word[start]
+            word[start] = word[end]
+            word[end] = tmp
+            start += 1
+            end -= 1
+        return word
+    ans = reverse(reverse(word[:step])+reverse(word[step:]))
+    return "".join(ans)
+~~~
+4.2
+“杂技算法”在交换距离增加之后，所需时间会急剧增加。这是因为该算法的高速缓存性能差，高速缓存大小很小，在交换距离增加的时候，“杂技算法”每次只从高速缓存读取一个元素，导致高速缓存需要读取的次数大大增加。
+
+然而，在Python实现的算法中，没有出现这个情况。杂技算法一直是最快的。这应该与Python底层实现有关系。
+“杂技算法”在交换距离增加之后，所需时间会急剧增加。这是因为该算法的高速缓存性能差，高速缓存大小很小，在交换距离增加的时候，“杂技算法”每次只从高速缓存读取一个元素，导致高速缓存需要读取的次数大大增加。
+
+然而，在Python实现的算法中，没有出现这个情况。杂技算法一直是最快的。这应该与Python底层实现有关系。
+5
+（aTbTcT）T = cba
